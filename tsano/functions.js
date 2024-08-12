@@ -47,3 +47,4 @@ var arrarLoopAverage = function (arre1) {
 };
 var arre1 = [20, 30, 40, 50, 600];
 console.log("test " + arrarLoopAverage(arre1));
+// test git
