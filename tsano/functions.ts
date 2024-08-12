@@ -55,3 +55,5 @@ const arrarLoopAverage = (arre1)=>{
 }
 const arre1 = [20,30,40,50,600];
 console.log("test " + arrarLoopAverage(arre1));
+
+// test git
