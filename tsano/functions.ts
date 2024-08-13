@@ -32,29 +32,23 @@ const isPalindrome = (palim:string):boolean=>{
 }
 console.log(isPalindrome("12321"));
 
-// average of array
-const arrarAverage = (arre:number[])=>{
-    if(arre.length === 0){
-console.log("The array is empty, cannot compute average.");
+/// other example
+const pal = (p:number):boolean=>{
+    let oroginalNum = p;
+    let reverse=0;
+    while(p > 0) {
+    let x = p % 10;
+    reverse = (reverse * 10) + x;
+    p = Math.floor(p / 10);
     }
-    const a11 = arre.reduce((acce, arc)=> acce+arc,0);
-return a11/arre.length;
+    return oroginalNum === reverse;
 }
-const arre = [20,10,20,10,20];
-console.log(arrarAverage(arre));
-
-
-// average of array with forloop
-const arrarLoopAverage = (arre1)=>{
-    var abg = 0;
-    let i:number;
-    for(i=0;i<arre1.length; i++){
-        abg = abg + arre1[i];
-    }
-    return abg/arre1.length;
+const pals = pal(121);
+if(pals == true){    
+console.log(` Number is palindrome`);
+} else {
+    console.log("number is not palindrome")
 }
-const arre1 = [20,30,40,50,600];
-console.log("test " + arrarLoopAverage(arre1));
 
 // Default parameter
 const dffunction = (name2:string, ages1:number=10)=>{

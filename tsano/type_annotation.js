@@ -1,15 +1,16 @@
-var fname1 = "Mahi Singh";
-var lname1 = "Rauthan";
-var fullname = fname1 + " : " + lname1;
+"use strict";
+let fname1 = "Mahi Singh";
+let lname1 = "Rauthan";
+let fullname = fname1 + " : " + lname1;
 console.log(fullname);
-var st = "Hello my name is Mahender singh rauthan.";
-var strLength = st.length;
+let st = "Hello my name is Mahender singh rauthan.";
+let strLength = st.length;
 console.log(strLength);
-var str2 = "this is a uppercase sentence";
-var upperCaseStr = str2.toUpperCase();
+let str2 = "this is a uppercase sentence";
+let upperCaseStr = str2.toUpperCase();
 console.log(upperCaseStr);
-var str3 = "this is a lowercase sentence";
-var lowerCaseStr = str3.toLowerCase();
+let str3 = "this is a lowercase sentence";
+let lowerCaseStr = str3.toLowerCase();
 console.log(lowerCaseStr);
 //boolean value funcion start
 function isEven(f1) {
@@ -25,13 +26,13 @@ console.log(divBy4and8);
 //boolean value funcion end
 //any and unknown
 //let a:string ="where is my type";
-var a1 = "where is my type";
+let a1 = "where is my type";
 a1 = 100;
 console.log(a1);
-var b1;
+let b1;
 b1 = "String, ";
-//b1 = 10;
-//b1 = true;
+b1 = 10;
+b1 = true;
 if (typeof b1 == "number") {
     console.log(b1 + " my type is number..");
 }
