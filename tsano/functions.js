@@ -47,4 +47,25 @@ var arrarLoopAverage = function (arre1) {
 };
 var arre1 = [20, 30, 40, 50, 600];
 console.log("test " + arrarLoopAverage(arre1));
-// test git
+// Default parameter
+var dffunction = function (name2, ages1) {
+    if (ages1 === void 0) { ages1 = 10; }
+    if (ages1 < 18) {
+        return "My name is ".concat(name2, " and i am not adult");
+    }
+    else {
+        return "My name is ".concat(name2, " and i am adult");
+    }
+};
+console.log(dffunction("pankaj"));
+// Optional parameter
+var opParameter = function (oprs, idd) {
+    if (idd) {
+        return "".concat(oprs, " and id is ").concat(idd);
+    }
+    else {
+        return "".concat(oprs, " thank you!");
+    }
+};
+console.log(opParameter("Hi this is opetional parameter"));
+// console.log(opParameter("Hi this is opetional parameter", 10));

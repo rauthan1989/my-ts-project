@@ -56,4 +56,24 @@ const arrarLoopAverage = (arre1)=>{
 const arre1 = [20,30,40,50,600];
 console.log("test " + arrarLoopAverage(arre1));
 
-// test git
+// Default parameter
+const dffunction = (name2:string, ages1:number=10)=>{
+    if(ages1<18){
+        return `My name is ${name2} and i am not adult`;
+    }else {
+        return `My name is ${name2} and i am adult`;
+    }
+}
+console.log(dffunction("pankaj"));
+
+// Optional parameter
+const opParameter=(oprs:string, idd?:number)=>{
+    if(idd){
+        return `${oprs} and id is ${idd}`;
+    } else {
+        return `${oprs} thank you!`;
+    }
+}
+console.log(opParameter("Hi this is opetional parameter"));
+// console.log(opParameter("Hi this is opetional parameter", 10));
+
