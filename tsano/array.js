@@ -27,3 +27,20 @@ var arrarLoopAverage = function (arre1) {
 };
 var arre1 = [20, 30, 40, 50, 600];
 console.log("test " + arrarLoopAverage(arre1));
+var fruits1 = ["one", "two", "three"];
+var upfruits = fruits1.push("four");
+console.log(upfruits);
+console.log(fruits1);
+//const popy = fruits1.pop();
+//console.log(popy);
+for (var i = 0; i < fruits1.length; i++) {
+    console.log(fruits1[i]);
+}
+for (var _i = 0, fruits1_1 = fruits1; _i < fruits1_1.length; _i++) {
+    var fr = fruits1_1[_i];
+    console.log(fr);
+}
+for (var fr1 in fruits1) {
+    console.log(fr1);
+}
+fruits1.forEach(function (value) { return console.log(value); });

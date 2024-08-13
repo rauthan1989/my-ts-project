@@ -33,3 +33,20 @@ const arre1:number[] = [20,30,40,50,600];
 console.log("test " + arrarLoopAverage(arre1));
 
 
+const fruits1:string[] = ["one", "two", "three"];
+const upfruits = fruits1.push("four");
+console.log(upfruits);
+console.log(fruits1);
+//const popy = fruits1.pop();
+//console.log(popy);
+
+for(let i=0;i<fruits1.length; i++){
+    console.log(fruits1[i]);
+}
+for(const fr of fruits1){
+    console.log(fr);
+}
+for(const fr1 in fruits1){
+    console.log(fr1);
+}
+fruits1.forEach((value)=> console.log(value))
