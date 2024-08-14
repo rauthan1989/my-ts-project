@@ -21,3 +21,106 @@ const student6:Student =  {
 // console.log(stgreet(student5));
 console.log(student5.greet('Nepal'));
 console.log(student6.greet('India'));
+
+
+
+//enum type
+enum Roles {
+    admin = "admin",
+    user = "user"
+}
+type loginDetails = {
+    name?:string;
+    email:string;
+    password:number;
+    role:Roles;
+}
+const emp:loginDetails = {
+name:"pankaj",
+email:"pankaj@gmail.com",
+password:123,
+role:Roles.admin
+}
+const emp1:loginDetails = {
+    name:"mahi",
+    email:"mahi@gmail.com",
+    password:123,
+    role:Roles.user
+}
+
+const isRole = (user1:loginDetails)=> {
+    //console.log(user1.role);
+if (user1.role === "admin"){
+    return "You are admin.";
+} else {
+    return "You are a normal user."
+}
+}
+console.log(isRole(emp1));
+
+
+const isRole1 = (user1:loginDetails)=> {
+    //console.log(user1.role);
+    const {name, role} = user1;
+return user1.role === "admin" ? `Hello ${name}! You are ${role}.` : `Hello ${name}! You are a normal ${role}.` // Turnery operator
+}
+console.log(isRole1(emp));
+console.log(isRole1(emp1));
+
+
+//tuples
+type Tup = readonly[string, number, boolean]; // readonly is use to prevent from .push() function
+const tip = (tuptup1:Tup)=>{
+const [name, age, hasDrivingLicence] = tuptup1;
+return `${name} and age ${age} ${hasDrivingLicence === true ? `Congrats!` : `Please get your license.`}`
+}
+const tup1:Tup = ["pankaj", 35, false];
+//tup1.push("test");
+console.log (tup1);
+const tup2:Tup = ["mahi", 21, true];
+console.log(tip(tup1))
+console.log(tip(tup2))
+
+
+// Union and Intersection
+type Emps = {
+    name:string;
+    age: number;
+}
+type Address = {
+    name?:string;
+    city:string;
+    pin: number;
+    country:string;
+}
+const user:Emps = {
+   name: "pankaj",
+   age: 35
+}
+const address:Address = {
+    city: "Delhi",
+    pin:110042,
+    country:"India"
+ }
+ type infor = Emps & Address; // Intersection
+
+ const user1:Emps = {
+    name: "pankaj",
+    age: 35
+ }
+ const address1:Address = {
+    name:"mahender",
+     city: "Delhi",
+     pin:110042,
+     country:"India"
+  }
+
+type infor1 = Emps | Address; // Union
+const dd = (info:Emps, address:Address) =>{
+//    return `${user}, ${address}`;
+return {... user, ... address}; // ... for complete data extraction
+}
+const myCompleteData:infor = dd(user,address); // intersection
+console.log(myCompleteData); // intersection
+const myCompleteData1:infor = dd(user1,address1); // union
+console.log(myCompleteData1); // union
