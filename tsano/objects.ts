@@ -57,3 +57,29 @@ const calculatePrice = (product:Product)=>{
 return `${products.name} total cost is ${products.price * products.quantity}.`  
 }
 console.log(calculatePrice(products));
+
+
+
+// interface
+interface mold {
+    bookPrice:number;
+    pencil:number;
+    eraser:number;
+}
+
+const pricing:mold = {
+    bookPrice:20,
+    pencil:7,
+    eraser:3
+}
+const pricing1:mold = {
+    bookPrice:100,
+    pencil:70,
+    eraser:30
+}
+
+const stationry = (bs:mold) =>  bs.bookPrice + bs.pencil + bs.eraser;
+const priceb = stationry(pricing);
+console.log(priceb);
+const priceb1 = stationry(pricing1);
+console.log(priceb1);

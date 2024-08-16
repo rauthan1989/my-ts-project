@@ -1,5 +1,6 @@
+"use strict";
 // initialization of object
-var person = {
+const person = {
     name: "mahender",
     age: 35,
     address: {
@@ -12,7 +13,7 @@ console.log(person.age);
 console.log(person.address.country);
 person.address.country = "Nepal"; // Updating object
 console.log(person.address.country);
-var person1 = {
+const person1 = {
     name: "mahender",
     age: 35,
     address: {
@@ -21,14 +22,29 @@ var person1 = {
     }
 };
 console.log(person1.name);
-var products = {
+const products = {
     name: "Laptop",
     price: 50,
     quantity: 10
 };
 //calculate total price
-var calculatePrice = function (product) {
+const calculatePrice = (product) => {
     //    return products.price * products.quantity;
-    return "".concat(products.name, " total cost is ").concat(products.price * products.quantity, ".");
+    return `${products.name} total cost is ${products.price * products.quantity}.`;
 };
 console.log(calculatePrice(products));
+const pricing = {
+    bookPrice: 20,
+    pencil: 7,
+    eraser: 3
+};
+const pricing1 = {
+    bookPrice: 100,
+    pencil: 70,
+    eraser: 30
+};
+const stationry = (bs) => bs.bookPrice + bs.pencil + bs.eraser;
+const priceb = stationry(pricing);
+console.log(priceb);
+const priceb1 = stationry(pricing1);
+console.log(priceb1);

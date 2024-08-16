@@ -1,23 +1,13 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var student5 = {
+"use strict";
+const student5 = {
     name: 'pankaj',
     age: 20,
-    greet: function (country) { return "my name is ".concat(student5.name, " and my age is ").concat(student5.age, " and country is ").concat(country); }
+    greet: (country) => `my name is ${student5.name} and my age is ${student5.age} and country is ${country}`
 };
-var student6 = {
+const student6 = {
     name: 'Mahender',
     age: 40,
-    greet: function (country) { return "my name is ".concat(student6.name, " and my age is ").concat(student6.age, " and country is ").concat(country); }
+    greet: (country) => `my name is ${student6.name} and my age is ${student6.age} and country is ${country}`
 };
 // const stgreet = (st1:Student):string => {
 //     return `my name is ${student5.name} and my age is ${student5.age}`;
@@ -31,19 +21,19 @@ var Roles;
     Roles["admin"] = "admin";
     Roles["user"] = "user";
 })(Roles || (Roles = {}));
-var emp = {
+const emp = {
     name: "pankaj",
     email: "pankaj@gmail.com",
     password: 123,
     role: Roles.admin
 };
-var emp1 = {
+const emp1 = {
     name: "mahi",
     email: "mahi@gmail.com",
     password: 123,
     role: Roles.user
 };
-var isRole = function (user1) {
+const isRole = (user1) => {
     //console.log(user1.role);
     if (user1.role === "admin") {
         return "You are admin.";
@@ -53,64 +43,82 @@ var isRole = function (user1) {
     }
 };
 console.log(isRole(emp1));
-var isRole1 = function (user1) {
+const isRole1 = (user1) => {
     //console.log(user1.role);
-    var name = user1.name, role = user1.role;
-    return user1.role === "admin" ? "Hello ".concat(name, "! You are ").concat(role, ".") : "Hello ".concat(name, "! You are a normal ").concat(role, "."); // Turnery operator
+    const { name, role } = user1;
+    return user1.role === "admin" ? `Hello ${name}! You are ${role}.` : `Hello ${name}! You are a normal ${role}.`; // Turnery operator
 };
 console.log(isRole1(emp));
 console.log(isRole1(emp1));
-var tip = function (tuptup1) {
-    var name = tuptup1[0], age = tuptup1[1], hasDrivingLicence = tuptup1[2];
-    return "".concat(name, " and age ").concat(age, " ").concat(hasDrivingLicence === true ? "Congrats!" : "Please get your license.");
+const tip = (tuptup1) => {
+    const [name, age, hasDrivingLicence] = tuptup1;
+    return `${name} and age ${age} ${hasDrivingLicence === true ? `Congrats!` : `Please get your license.`}`;
 };
-var tup1 = ["pankaj", 35, false];
+const tup1 = ["pankaj", 35, false];
 //tup1.push("test");
 console.log(tup1);
-var tup2 = ["mahi", 21, true];
+const tup2 = ["mahi", 21, true];
 console.log(tip(tup1));
 console.log(tip(tup2));
-var user = {
+const user = {
     name: "pankaj",
     age: 35
 };
-var address = {
+const address = {
     city: "Delhi",
     pin: 110042,
     country: "India"
 };
-var user1 = {
+const user1 = {
     name: "pankaj",
     age: 35
 };
-var address1 = {
+const address1 = {
     name: "mahender",
     city: "Delhi",
     pin: 110042,
     country: "India"
 };
-var dd = function (info, address) {
+const dd = (info, address) => {
     //    return `${user}, ${address}`;
-    return __assign(__assign({}, user), address); // ... for complete data extraction
+    return Object.assign(Object.assign({}, user), address); // ... for complete data extraction
 };
-var myCompleteData = dd(user, address); // intersection
+const myCompleteData = dd(user, address); // intersection
 console.log(myCompleteData); // intersection
-var myCompleteData1 = dd(user1, address1); // union
+const myCompleteData1 = dd(user1, address1); // union
 console.log(myCompleteData1); // union
 // Generics
 function abcv(value) {
     // console.log(value);
     return value;
 }
-var abcv1 = abcv(20);
-var abcv2 = abcv("This is generic function");
+const abcv1 = abcv(20);
+const abcv2 = abcv("This is generic function");
 console.log(abcv1);
 console.log(abcv2);
 function genrf(ax, bx) {
-    var cx = ax + bx;
+    // let cx = ax + bx; // There is a type-related issue in your TypeScript code. The + operator is not universally defined for all types. It works for numbers and strings, but not for other types by default. When using generic types, TypeScript doesn't know how to handle the + operation unless you provide a constraint or type that guarantees it.
+    let cx = ax + bx;
     return cx;
 }
-var v1 = genrf(10, 20);
-var v2 = genrf("Hello World! ", "My name is pankaj");
+const v1 = genrf(15, 20);
+const v2 = genrf("Hello World! ", "My name is pankaj");
 console.log(v1);
 console.log(v2);
+//Another way to solve above problems
+// function genrf<S extends number | string>(ax: S, bx: S): S {
+//     let cx = (ax as any) + (bx as any);
+//     return cx;
+//   }
+//   const v1: number = genrf<number>(10, 20);
+//   const v2: string = genrf<string>("Hello World! ", "My name is Pankaj");
+//   console.log(v1);
+//   console.log(v2);
+function genrfa(ax1, bx1) {
+    let cx = ax1 + bx1;
+    return cx;
+}
+const v1a = genrfa(15, " age");
+const v2a = genrfa("I am ", "function overloading with generics..");
+console.log(v1a);
+console.log(v2a);

@@ -132,8 +132,8 @@ function abcv<T>(value:T):T{ // Here "T"(placeholder) is a type of value so i ca
 // console.log(value);
 return value;
 }
-const abcv1 = abcv(20);
-const abcv2 = abcv("This is generic function");
+const abcv1 = abcv<number>(20);
+const abcv2 = abcv<string>("This is generic function");
 console.log(abcv1);
 console.log(abcv2);
 
@@ -159,3 +159,11 @@ console.log(v2);
 //   console.log(v1);
 //   console.log(v2);
 
+function genrfa<T,S>(ax1:T, bx1:S){
+    let cx = ax1 as any + bx1 as any;
+    return cx;
+    }
+    const v1a = genrfa<number, string>(15, " age");
+    const v2a = genrfa("I am ", "function overloading with generics..")
+    console.log(v1a);
+    console.log(v2a);
