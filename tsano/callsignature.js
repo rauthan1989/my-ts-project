@@ -97,3 +97,20 @@ var myCompleteData = dd(user, address); // intersection
 console.log(myCompleteData); // intersection
 var myCompleteData1 = dd(user1, address1); // union
 console.log(myCompleteData1); // union
+// Generics
+function abcv(value) {
+    // console.log(value);
+    return value;
+}
+var abcv1 = abcv(20);
+var abcv2 = abcv("This is generic function");
+console.log(abcv1);
+console.log(abcv2);
+function genrf(ax, bx) {
+    var cx = ax + bx;
+    return cx;
+}
+var v1 = genrf(10, 20);
+var v2 = genrf("Hello World! ", "My name is pankaj");
+console.log(v1);
+console.log(v2);

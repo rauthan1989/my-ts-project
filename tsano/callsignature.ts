@@ -124,3 +124,38 @@ const myCompleteData:infor = dd(user,address); // intersection
 console.log(myCompleteData); // intersection
 const myCompleteData1:infor = dd(user1,address1); // union
 console.log(myCompleteData1); // union
+
+
+
+// Generics
+function abcv<T>(value:T):T{ // Here "T"(placeholder) is a type of value so i can pass any type of value 
+// console.log(value);
+return value;
+}
+const abcv1 = abcv(20);
+const abcv2 = abcv("This is generic function");
+console.log(abcv1);
+console.log(abcv2);
+
+
+function genrf<S>(ax:S, bx:S):S{
+// let cx = ax + bx; // There is a type-related issue in your TypeScript code. The + operator is not universally defined for all types. It works for numbers and strings, but not for other types by default. When using generic types, TypeScript doesn't know how to handle the + operation unless you provide a constraint or type that guarantees it.
+let cx = ax as any + bx as any;
+return cx;
+}
+const v1:number = genrf<number>(15, 20);
+const v2:string = genrf<string>("Hello World! ", "My name is pankaj")
+console.log(v1);
+console.log(v2);
+
+//Another way to solve above problems
+// function genrf<S extends number | string>(ax: S, bx: S): S {
+//     let cx = (ax as any) + (bx as any);
+//     return cx;
+//   }
+  
+//   const v1: number = genrf<number>(10, 20);
+//   const v2: string = genrf<string>("Hello World! ", "My name is Pankaj");
+//   console.log(v1);
+//   console.log(v2);
+
