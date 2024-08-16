@@ -166,4 +166,4 @@ function genrfa<T,S>(ax1:T, bx1:S){
     const v1a = genrfa<number, string>(15, " age");
     const v2a = genrfa("I am ", "function overloading with generics..")
     console.log(v1a);
-    console.log(v2a);
+    console.log(v2a); 
