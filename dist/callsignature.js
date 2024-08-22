@@ -81,7 +81,7 @@ const address1 = {
 };
 const dd = (info, address) => {
     //    return `${user}, ${address}`;
-    return Object.assign(Object.assign({}, user), address); // ... for complete data extraction
+    return { ...user, ...address }; // ... for complete data extraction
 };
 const myCompleteData = dd(user, address); // intersection
 console.log(myCompleteData); // intersection
