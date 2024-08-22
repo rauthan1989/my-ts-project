@@ -42,3 +42,15 @@ else if (typeof b1 == "boolean") {
 else {
     console.log(b1 + " my type is string..");
 }
+// type guard
+const fave = (hobby) => {
+    if (typeof hobby === "object" && Array.isArray(hobby)) {
+        return hobby.map(() => { });
+    }
+    else {
+        console.log(hobby);
+    }
+};
+fave("pankaj");
+const did = fave(["Mahender", "Rauthan"]);
+console.log(did);

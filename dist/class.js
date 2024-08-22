@@ -41,3 +41,82 @@ const employee6 = new Employee5("Mahender", 21, ["Account", "Manger"]);
 const employee7 = new Employee5("Singh", 21, ["UI Developer", "IT"]);
 const employee8 = new Employee5("RAuthan", 21, ["HR", "Manger"]);
 console.log(employee6.introduce());
+// Static properties and methods
+class MathOperation {
+    static PI = Math.PI;
+    static addition(a, b) {
+        return a + b;
+    }
+    static subtraction(a, b) {
+        return a - b;
+    }
+}
+console.log(MathOperation.PI);
+console.log(MathOperation.addition(10, 5));
+console.log(MathOperation.subtraction(10, 5));
+// abstract class
+class Shape {
+    color;
+    constructor(color) {
+        this.color = color;
+    }
+}
+// calculating area of Circle
+class Circle extends Shape {
+    color;
+    radius;
+    constructor(color, radius) {
+        super(color);
+        this.color = color;
+        this.radius = radius;
+    }
+    calculateArea() {
+        return Math.PI * this.radius * this.radius;
+    }
+    displayArea() {
+        console.log(`Circle color is ${this.color} and radius is ${this.radius} and area of circle is ${this.calculateArea()}.`);
+    }
+}
+// calculating area of Square
+class Square extends Shape {
+    color;
+    radius;
+    constructor(color, radius) {
+        super(color);
+        this.color = color;
+        this.radius = radius;
+    }
+    calculateArea() {
+        return this.radius * this.radius;
+    }
+    displayArea() {
+        console.log(`Square color is ${this.color}, radius is ${this.radius} area of square is ${this.calculateArea()}.`);
+    }
+}
+// calculating area of Triangle
+class Triangle extends Shape {
+    color;
+    width;
+    height;
+    constructor(color, width, height) {
+        super(color);
+        this.color = color;
+        this.width = width;
+        this.height = height;
+    }
+    calculateArea() {
+        return (this.width * this.height) / 2;
+    }
+    displayArea() {
+        console.log(`Area of triangle is ${this.calculateArea()} and color is ${this.color}. `);
+    }
+}
+const shapeArea = new Circle("red", 10);
+console.log(shapeArea.calculateArea());
+shapeArea.displayArea();
+const squareArea = new Square("Black", 5);
+console.log(squareArea.calculateArea());
+squareArea.displayArea();
+const triangleArea = new Triangle("Black", 50, 4);
+console.log(triangleArea.calculateArea());
+triangleArea.displayArea();

@@ -48,3 +48,23 @@ const priceb = stationry(pricing);
 console.log(priceb);
 const priceb1 = stationry(pricing1);
 console.log(priceb1);
+const ab = {
+    a: "pankaj",
+    b: 10,
+    c: 10,
+    d: "singh"
+};
+class xy {
+    a;
+    b;
+    c;
+    d;
+    constructor(a, b, c, d) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        this.d = d;
+    }
+}
+const st13 = new xy("Pankaj", 10, 15, "singh");
+console.log(st13);

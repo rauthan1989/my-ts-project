@@ -34,5 +34,5 @@ class Temprature {
 const temp = new Temprature();
 temp.celsius = 25; // calling set method
 console.log(temp.fahrenheit); // calling get method
-temp.fahrenheit = 77;
-console.log(temp.celsius);
+temp.fahrenheit = 77; // calling set method
+console.log(temp.celsius); // calling get method

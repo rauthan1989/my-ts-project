@@ -83,3 +83,27 @@ const priceb = stationry(pricing);
 console.log(priceb);
 const priceb1 = stationry(pricing1);
 console.log(priceb1);
+
+
+// interface with extends and type
+interface A{
+    a:string,
+    b:number
+}
+interface D {
+    c:number,
+    d:string,
+}
+interface E extends A, D {} // interface use extends keywords to extends
+const ab:E = {
+    a:"pankaj",
+    b:10,
+    c:10,
+    d:"singh"
+}
+class xy implements E { // interface extends with "implements" keyword
+constructor(public a:string, public b:number, public c:number, public d:string){}
+}
+
+const st13 = new xy("Pankaj", 10, 15, "singh");
+console.log(st13)
